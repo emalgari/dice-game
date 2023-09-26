@@ -84,3 +84,82 @@ function displayResult() {
         mainContainer.appendChild(tryButton);
     }
 }
+
+function rollDice() {
+    const diceOneFaces = Array.from(document.querySelectorAll(".face1"));
+    const diceTwoFaces = Array.from(document.querySelectorAll(".face2"));
+    const activeDice = document.querySelector(".face1");
+    //const activeText = document.querySelector(".textColor-active");
+
+    // Disable active dice/face 
+    activeDice.classList.remove("active");
+
+    // Deactivate the player-1 intial active score/turns state
+    player1TextColor.classList.remove("textColor-active");
+   
+    // Generate a random face index between 0 and 5 (inclusive)
+    const randomFaceOneIndex = Math.floor(Math.random() * 6);
+    const randomFaceTwoIndex = Math.floor(Math.random() * 6);
+    
+    // Switch players
+    currentPlayer = currentPlayer === 1 ? 2 : 1;
+
+    // Hide all dice faces and their child elements initially
+    diceOneFaces.forEach(face => {
+        face.style.display = "none";
+        const dots = face.querySelectorAll(".dot");
+        dots.forEach(dot => {
+            dot.style.display = "none";
+        });
+    });
+
+    diceTwoFaces.forEach(face => {
+        face.style.display = "none";
+        const dots = face.querySelectorAll(".dot");
+        dots.forEach(dot => {
+            dot.style.display = "none";
+        });
+    });
+
+    // Show randomly selected dice face and its child dots
+    if (playerOneCurrentTurns > 0 || playerTwoCurrentTurns > 0){
+        diceOneFaces[randomFaceOneIndex].style.display = "grid";
+        const dotsOneToShow = diceOneFaces[randomFaceOneIndex].querySelectorAll(".dot");
+        dotsOneToShow.forEach(dot => {
+            dot.style.display = "block";
+        });
+    
+        diceTwoFaces[randomFaceTwoIndex].style.display = "grid";
+        const dotsTwoToShow = diceTwoFaces[randomFaceTwoIndex].querySelectorAll(".dot");
+        dotsTwoToShow.forEach(dot => {
+            dot.style.display = "block";
+        });
+    }
+    
+    //Track players- scroes and turns
+    if (turn === 0 && currentPlayer === 1){
+        playerTurn.classList.add("player1");
+        playerTurn.classList.remove("player2");
+        playerTurn.innerHTML = "Now, Player-1's turn!";
+        turn = 1;
+        diceTwoFaces[randomFaceTwoIndex].classList.remove("player2-active-dice");
+        diceOneFaces[randomFaceOneIndex].classList.add("player1-active-dice");
+        player1TextColor.classList.add("player-1-text-color");
+        player2TextColor.classList.remove("player-2-text-color");
+        player2TurnsLeft();
+        addScoreForPlayer2(randomFaceTwoIndex + 1);
+    } else {
+        playerTurn.classList.remove("player1");
+        playerTurn.classList.add("player2");
+        playerTurn.innerHTML = "Now, Player-2's turn!";
+        turn = 0;
+        diceTwoFaces[randomFaceTwoIndex].classList.add("player2-active-dice");
+        diceOneFaces[randomFaceOneIndex].classList.remove("player1-active-dice");
+        player2TextColor.classList.add("player-2-text-color");
+        player1TextColor.classList.remove("player-1-text-color");
+        player1TurnsLeft();
+        addScoreForPlayer1(randomFaceOneIndex + 1);
+    }
+
+    displayResult();
+}
