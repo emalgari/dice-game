@@ -69,7 +69,7 @@ function displayResult() {
             gameResult.innerHTML = "Player-2 Win!";
             player2TextColor.style.color = "red";
             player1TextColor.style.color = "#333";
-        } else if (player2CurrentScore === player1CurrentScore) {
+        } else {
             gameResult.innerHTML = "Game tie!";
             player1TextColor.style.color = "green";
             player2TextColor.style.color = "green";
@@ -89,7 +89,6 @@ function rollDice() {
     const diceOneFaces = Array.from(document.querySelectorAll(".face1"));
     const diceTwoFaces = Array.from(document.querySelectorAll(".face2"));
     const activeDice = document.querySelector(".face1");
-    //const activeText = document.querySelector(".textColor-active");
 
     // Disable active dice/face 
     activeDice.classList.remove("active");
