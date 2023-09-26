@@ -18,3 +18,17 @@ let player1CurrentScore = 0;
 let player2CurrentScore = 0;
 let playerOneCurrentTurns = 10;
 let playerTwoCurrentTurns = 10;
+
+//functions- to track players turns
+function player1TurnsLeft(){
+    if (playerOneCurrentTurns > 0){
+        playerOneCurrentTurns--;
+        player1Turns.innerHTML = playerOneCurrentTurns;
+    }
+}
+function player2TurnsLeft(){
+    if (playerTwoCurrentTurns > 0){
+        playerTwoCurrentTurns--;
+        player2Turns.innerHTML = playerTwoCurrentTurns;
+    }   
+}
