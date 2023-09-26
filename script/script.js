@@ -46,3 +46,41 @@ function addScoreForPlayer2(addedScore){
         player2Score.innerHTML = player2CurrentScore;    
     }  
 }
+
+// function- reload page/restart game
+function tryAgain(){
+    window.location.reload();
+}
+
+//function- to show result immediately
+function displayResult() {
+    if (playerOneCurrentTurns === 0 && playerTwoCurrentTurns === 0) {
+        //Game restart button
+        let tryButton = document.createElement("button");
+        tryButton.className = "btn";
+        tryButton.textContent = "Try Again";
+        tryButton.addEventListener("click", tryAgain);
+
+        if (player1CurrentScore > player2CurrentScore) {
+            gameResult.innerHTML = "Player-1 Win!";
+            player1TextColor.style.color = "red";
+            player2TextColor.style.color = "#333";
+        } else if (player2CurrentScore > player1CurrentScore) {
+            gameResult.innerHTML = "Player-2 Win!";
+            player2TextColor.style.color = "red";
+            player1TextColor.style.color = "#333";
+        } else if (player2CurrentScore === player1CurrentScore) {
+            gameResult.innerHTML = "Game tie!";
+            player1TextColor.style.color = "green";
+            player2TextColor.style.color = "green";
+        }
+        gameResult.style.display = "flex";
+        gameResult.classList.add("result-style");
+        playerTurn.style.display = "none";
+        titles.forEach(title => {
+            title.style.display = "none";
+        });
+        playButton.style.display = "none";
+        mainContainer.appendChild(tryButton);
+    }
+}
