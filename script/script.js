@@ -32,3 +32,17 @@ function player2TurnsLeft(){
         player2Turns.innerHTML = playerTwoCurrentTurns;
     }   
 }
+
+//functions- to add scores
+function addScoreForPlayer1(addedScore){
+    if (playerOneCurrentTurns > 0){
+        player1CurrentScore += addedScore;
+        player1Score.innerHTML = player1CurrentScore;
+    }  
+}
+function addScoreForPlayer2(addedScore){
+    if (playerTwoCurrentTurns > 0){
+        player2CurrentScore += addedScore;
+        player2Score.innerHTML = player2CurrentScore;    
+    }  
+}
