@@ -1,6 +1,6 @@
 ## 🚀 Demo
 
-👉 Play the game live: [Dice Game Demo](https://your-demo-link-here.com)
+👉 Play the game live: [Dice Game Demo](https://emalgari.github.io/dice-game/)
 
 ## 📋 Table of Contents
 
@@ -67,7 +67,7 @@ We welcome contributions! If you'd like to contribute to this project, follow th
 This project is free to use, and attribution is appreciated.
 ## 🙏 Acknowledgments
 
-- Special thanks to [Dr. Angela Yu's](https://www.udemy.com/user/4b4368a3-b5c8-4529-aa65-2056ec31f37e/) for inspiring this project.
+- Special thanks to [Dr. Angela Yu](https://www.udemy.com/user/4b4368a3-b5c8-4529-aa65-2056ec31f37e/) for inspiring this project.
 - This project is entirely self-contained and does not require additional dependencies.
 
 Enjoy the game, and may the dice be in your favor! 🎉
