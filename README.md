@@ -24,9 +24,9 @@ To play the game locally, follow these steps:
 1. Clone this repository to your local machine:
 
    ```bash
-   git clone https://github.com/your-username/dice-game.git
+   git clone https://github.com/emalgari/dice-game.git
 
-    Open the index.html file in your web browser.
+2. Open the index.html file in your web browser.
 
 ## 🎲 How to Play
 
@@ -37,15 +37,19 @@ To play the game locally, follow these steps:
 ## 📁 Project Structure
 
 This project is structured using HTML, CSS, and JavaScript:
+
 ### HTML Structure
 
 The HTML file (index.html) defines the structure of the game, including the game board, player information, and buttons.
+
 ### CSS Styles
 
 The CSS file (style.css) adds styles for an appealing visual experience, including layout, colors, and responsiveness.
+
 ### JavaScript Logic
 
 The JavaScript file (script.js) contains the game logic, including player turns, score tracking, and result calculation.
+
 ## 🤝 Contributing
 
 We welcome contributions! If you'd like to contribute to this project, follow these steps:
@@ -65,6 +69,7 @@ We welcome contributions! If you'd like to contribute to this project, follow th
 ## 📄 License
 
 This project is free to use, and attribution is appreciated.
+
 ## 🙏 Acknowledgments
 
 - Special thanks to [Dr. Angela Yu](https://www.udemy.com/user/4b4368a3-b5c8-4529-aa65-2056ec31f37e/) for inspiring this project.
